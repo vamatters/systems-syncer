@@ -1,5 +1,8 @@
 const request = require("supertest");
 const app = require("../app");
+const describe = describe;
+const it = it;
+const expect = expect;
 
 describe("GET /greet/:myName", () => {
   it("should return Hello, <name>!", async () => {
