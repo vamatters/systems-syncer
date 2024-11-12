@@ -5,15 +5,16 @@ import pluginJs from "@eslint/js";
 export default [
   {
     files: ["**/*.js"],
-    languageOptions: { sourceType: "commonjs" },
-    // Add Node.js environment here
-    env: {
-      node: true, // This tells ESLint to recognize Node.js globals
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node, // Include Node.js globals
+      },
     },
   },
   {
     languageOptions: {
-      globals: globals.browser,
+      globals: globals.browser, // Include browser globals
     },
   },
   pluginJs.configs.recommended,
